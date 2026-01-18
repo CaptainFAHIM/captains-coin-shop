@@ -1,6 +1,6 @@
 <section class="card card-narrow">
   <h1>Admin Login</h1>
-  <form method="post" action="<?= BASE_URL ?>?route=auth/doLogin" class="form">
+  <form method="post" action="<?= BASE_URL ?>?page=auth_doLogin" class="form">
     <div class="form-group">
       <label>Email</label>
       <input type="email" name="email" class="form-control" required>
