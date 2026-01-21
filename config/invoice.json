@@ -1,0 +1,9 @@
+{
+  "title": "Invoice",
+  "business_name": "Captains Coin Shop",
+  "business_tagline": "Fast, secure in-game currency",
+  "business_address": "Dhaka, Bangladesh",
+  "business_contact": "support@captainscoin.shop | +880-1XXX-XXXXXX",
+  "currency_symbol": "৳",
+  "footer_note": "Thank you for your order. Delivery after transaction ID verification."
+}

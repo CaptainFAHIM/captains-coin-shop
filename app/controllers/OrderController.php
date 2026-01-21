@@ -27,6 +27,34 @@ class OrderController extends Controller
             'transaction_id' => $transaction_id,
             'price' => $price,
         ]);
-        $this->render('order_success', ['order_id' => $orderId]);
+        $configPath = __DIR__ . '/../../config/invoice.json';
+        $invoice = [
+            'title' => 'Invoice',
+            'business_name' => 'Captains Coin Shop',
+            'business_tagline' => '',
+            'business_address' => '',
+            'business_contact' => '',
+            'currency_symbol' => '',
+            'footer_note' => '',
+        ];
+        if (file_exists($configPath)) {
+            $loaded = json_decode(file_get_contents($configPath), true);
+            if (is_array($loaded)) {
+                $invoice = array_merge($invoice, $loaded);
+            }
+        }
+        $order = [
+            'id' => $orderId,
+            'game_name' => $game['name'],
+            'ign' => $ign,
+            'contact' => $contact,
+            'payment_method' => $payment_method,
+            'transaction_id' => $transaction_id,
+            'amount' => $amount,
+            'rate' => (float)$game['rate_per_unit'],
+            'price' => $price,
+            'date' => date('Y-m-d H:i'),
+        ];
+        $this->render('order_success', ['order' => $order, 'invoice' => $invoice]);
     }
 }
