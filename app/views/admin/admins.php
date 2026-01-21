@@ -5,7 +5,7 @@
 <section class="grid">
   <div class="card">
     <h2>Add Admin</h2>
-    <form method="post" action="<?= BASE_URL ?>?page=admin_addAdmin" class="form">
+    <form method="post" action="<?= BASE_URL ?>?page=admin_addAdmin" class="form" id="add-admin-form">
       <div class="form-group">
         <label>Name</label>
         <input type="text" name="name" class="form-control" required>
@@ -13,6 +13,7 @@
       <div class="form-group">
         <label>Email</label>
         <input type="email" name="email" class="form-control" required>
+        <div class="alert alert-danger" id="admin-email-error" style="display:none"></div>
       </div>
       <div class="form-group">
         <label>Password</label>
